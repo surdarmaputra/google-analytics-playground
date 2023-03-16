@@ -179,10 +179,8 @@ export default function Button({
   }
 
   return (
-    <NextLink href={href || '/'}>
-      <a className={finalClassName} title={title}>
-        {children}
-      </a>
+    <NextLink className={finalClassName} href={href || '/'} title={title}>
+      {children}
     </NextLink>
   );
 }
