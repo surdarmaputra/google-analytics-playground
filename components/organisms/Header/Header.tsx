@@ -17,34 +17,26 @@ const links: NavLink[] = [
     href: '/',
   },
   {
-    title: 'Solutions',
+    title: 'Entertainment',
     href: '#',
     children: [
       {
-        title: 'Business Line of Credit',
-        href: '#',
+        title: 'Upcoming Movies',
+        href: '/upcoming-movies',
       },
       {
-        title: 'SBA Loan',
-        href: '#',
+        title: 'Trending',
+        href: '/trending',
       },
       {
-        title: 'Revenue Based Financing',
-        href: '#',
-      },
-      {
-        title: 'Invoice Factoring',
-        href: '#',
+        title: 'TV Series',
+        href: '/tv-series',
       },
     ],
   },
   {
     title: 'About',
     href: '/about',
-  },
-  {
-    title: 'Contact',
-    href: '/contact',
   },
 ];
 
@@ -185,7 +177,7 @@ interface HeaderProps {
 
 export default function Header({ navLinks = links }: HeaderProps) {
   return (
-    <header className="container mx-auto flex w-full items-center justify-between py-4 px-6">
+    <header className="container mx-auto flex w-full items-center justify-between py-4 px-8 md:px-12">
       <Link className="no-underline" href="/">
         <Logo />
       </Link>
