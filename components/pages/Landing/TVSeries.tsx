@@ -31,10 +31,12 @@ const movies: Media[] = [
 ];
 
 export default function TVSeries() {
+  const title = 'TV Series';
+
   return (
     <section className='container mx-auto mb-20 px-8 md:px-12'>
-      <h2>TV Series</h2>
-      <MediaCatalogueSection items={movies} />
+      <h2>{title}</h2>
+      <MediaCatalogueSection catalogueTitle={title} items={movies} />
     </section>
   );
 }

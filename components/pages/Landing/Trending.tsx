@@ -31,10 +31,12 @@ const movies: Media[] = [
 ];
 
 export default function Trending() {
+  const title = 'Trending';
+
   return (
     <section className='container mx-auto mb-20 px-8 md:px-12'>
-      <h2>Trending</h2>
-      <MediaCatalogueSection items={movies} />
+      <h2>{title}</h2>
+      <MediaCatalogueSection catalogueTitle={title} items={movies} />
     </section>
   );
 }
