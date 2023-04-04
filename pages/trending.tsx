@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import { ModuleName } from 'libs/analytics/types';
+
 import Catalogue from 'components/pages/Catalogue';
 
 const movies = [
@@ -77,7 +79,7 @@ export default function Trending() {
         <link href="/favicon.ico" rel="icon" />
       </Head>
 
-      <Catalogue items={movies} title="Trending Movies" />
+      <Catalogue items={movies} moduleName={ModuleName.Trending} title="Trending Movies" />
     </>
   );
 }

@@ -1,22 +1,29 @@
-export enum ButtonId {
+export enum ElementId {
   StartWatching = 'StartWatching',
   Pricing = 'Pricing',
 }
 
+export enum ModuleName {
+  Landing = 'Landing',
+  UpcomingMovies = 'UpcomingMovies',
+  Trending = 'Trending',
+  TVSeries = 'TVSeries',
+}
+
 interface CustomEvent {
+  module_name: string;
   name: string;
 }
 
-export interface ButtonClickEvent extends CustomEvent {
-  name: 'button_click';
-  id: ButtonId;
+export interface ElementClickEvent extends CustomEvent {
+  name: 'element_click';
+  element_id: ElementId;
 }
 
 export interface MediaClickEvent extends CustomEvent {
   name: 'media_click';
   title: string;
-  catalogue_title?: string;
-  catalogue_item_index?: number;
+  item_position_index?: number;
 }
 
 export interface FormEvent extends CustomEvent{
@@ -27,6 +34,6 @@ export interface FormEvent extends CustomEvent{
   change_step_to?: number;
 }
 
-export type EventType = ButtonClickEvent
+export type EventType = ElementClickEvent
   | MediaClickEvent
   | FormEvent;

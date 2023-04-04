@@ -1,3 +1,4 @@
+import { ModuleName } from 'libs/analytics/types';
 import { Media } from 'types';
 
 import MediaCatalogueSection from 'components/organisms/MediaCatalogueSection';
@@ -36,7 +37,7 @@ export default function Trending() {
   return (
     <section className='container mx-auto mb-20 px-8 md:px-12'>
       <h2>{title}</h2>
-      <MediaCatalogueSection catalogueTitle={title} items={movies} />
+      <MediaCatalogueSection items={movies} moduleName={ModuleName.Landing} />
     </section>
   );
 }

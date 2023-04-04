@@ -1,32 +1,33 @@
 import { trackEvent } from 'libs/analytics';
+import { ModuleName } from 'libs/analytics/types';
 import { Media } from 'types';
 
 import MediaCard from 'components/molecules/MediaCard';
 
 interface MediaCatalogueSectionProps {
-  catalogueTitle?: string;
   items: Media[];
+  moduleName: ModuleName;
 }
 
-export default function MediaCatalogueSection({ items, catalogueTitle }: MediaCatalogueSectionProps) {
-  const handleItemClick = (index: number, properties: { title: string }) => {
+export default function MediaCatalogueSection({ items, moduleName }: MediaCatalogueSectionProps) {
+  const handleItemClick = (index: number, item: Media) => {
     trackEvent({
       name: 'media_click',
-      title: properties.title,
-      catalogue_title: catalogueTitle,
-      catalogue_item_index: index,
+      module_name: moduleName,
+      item_position_index: index,
+      title: item.title,
     });
   };
 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
-      {items.map(({ title, secondaryTitle, description }, index) => (
+      {items.map((item, index) => (
         <MediaCard
-          description={description}
+          description={item.description}
           key={index}
-          onClick={() => handleItemClick(index, { title })}
-          secondaryTitle={secondaryTitle}
-          title={title}
+          onClick={() => handleItemClick(index, item)}
+          secondaryTitle={item.secondaryTitle}
+          title={item.title}
         />
       ))}
     </div>

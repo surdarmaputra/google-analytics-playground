@@ -1,3 +1,4 @@
+import { ModuleName } from 'libs/analytics/types';
 import { Media } from 'types';
 
 import Footer from 'components/organisms/Footer';
@@ -8,9 +9,10 @@ import SubscribeSection from 'components/organisms/SubscribeSection';
 interface CatalogueProps {
   title: string;
   items: Media[];
+  moduleName: ModuleName;
 }
 
-export default function Catalogue({ title, items }: CatalogueProps) {
+export default function Catalogue({ title, items, moduleName }: CatalogueProps) {
   return (
     <>
       <div className="absolute left-0 top-24 -z-10 h-72 w-72 rounded-full bg-primary-500 opacity-10 blur-3xl"></div>
@@ -21,7 +23,7 @@ export default function Catalogue({ title, items }: CatalogueProps) {
         {title}
       </h1>
       <section className='container mx-auto mb-20 px-8 md:px-12'>
-        <MediaCatalogueSection items={items} />
+        <MediaCatalogueSection items={items} moduleName={moduleName} />
       </section>
       <SubscribeSection />
       <Footer />

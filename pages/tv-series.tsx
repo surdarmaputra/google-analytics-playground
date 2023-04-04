@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import { ModuleName } from 'libs/analytics/types';
+
 import Catalogue from 'components/pages/Catalogue';
 
 const movies = [
@@ -82,7 +84,7 @@ export default function TVSeries() {
         <link href="/favicon.ico" rel="icon" />
       </Head>
 
-      <Catalogue items={movies} title="TV Series" />
+      <Catalogue items={movies} moduleName={ModuleName.TVSeries} title="TV Series" />
     </>
   );
 }

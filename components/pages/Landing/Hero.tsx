@@ -1,18 +1,20 @@
 import { trackEvent } from 'libs/analytics';
-import { ButtonId } from 'libs/analytics/types';
+import { ElementId, ModuleName } from 'libs/analytics/types';
 
 export default function Hero() {
   const handleStartWatchingClick = () => {
     trackEvent({
-      name: 'button_click',
-      id: ButtonId.StartWatching,
+      name: 'element_click',
+      module_name: ModuleName.Landing,
+      element_id: ElementId.StartWatching,
     });
   };
 
   const handlePricingClick = () => {
     trackEvent({
-      name: 'button_click',
-      id: ButtonId.Pricing,
+      name: 'element_click',
+      module_name: ModuleName.Landing,
+      element_id: ElementId.Pricing,
     });
   };
 
