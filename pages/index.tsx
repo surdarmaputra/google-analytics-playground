@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Google Analytics Playground</title>
+        <title>SurPlay</title>
         <meta
           content="Starter kit for Next.js project using Typescript and Tailwind CSS"
           name="description"
