@@ -1,4 +1,6 @@
-import { trackEvent } from 'libs/analytics';
+import { useEffect } from 'react';
+
+import { setGlobalTrackerProperties, trackEvent } from 'libs/analytics';
 import { ButtonId } from 'libs/analytics/types';
 
 export default function Hero() {
@@ -16,6 +18,10 @@ export default function Hero() {
     });
   };
 
+  useEffect(() => {
+    setGlobalTrackerProperties();
+  }, []);
+
   return (
     <section className="container mx-auto px-8 py-36 text-center sm:px-20">
       <div className="absolute left-0 top-64 -z-10 h-72 w-72 rounded-full bg-violet-500 opacity-10 blur-3xl dark:bg-violet-700"></div>
@@ -25,7 +31,9 @@ export default function Hero() {
         Discover the Magic of Cinema
       </h1>
       <p className="mb-12 leading-relaxed text-slate-700 dark:text-slate-400">
-        Experience the magic of cinema with our extensive collection of movies - from action-packed adventures to heartwarming romances. Sit back, grab some popcorn, and let the show begin!
+        Experience the magic of cinema with our extensive collection of movies -
+        from action-packed adventures to heartwarming romances. Sit back, grab
+        some popcorn, and let the show begin!
       </p>
       <div className="mx-auto flex w-fit flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
         <button
